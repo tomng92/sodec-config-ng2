@@ -24,7 +24,6 @@ import {HeroService} from "./hero-service/hero.service";
     RouterModule.forRoot([
       {path: 'heroes', component: HeroesComponent},
       {path: 'dashboard', component: DashboardComponent},
-      {path: 'heroes', component: HeroesComponent},
       {path: 'detail/:id', component: HeroDetailComponent}
     ])
   ],
