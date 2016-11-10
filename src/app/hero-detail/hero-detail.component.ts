@@ -21,12 +21,10 @@ export class HeroDetailComponent implements OnInit {
    * Ctor uses injection dependencies.
    * @param heroService
    * @param route
-   * @param location
    */
   constructor(
     private heroService: HeroService,
     private route: ActivatedRoute
-    // private location: Location
   ) {}
 
 
@@ -34,11 +32,11 @@ export class HeroDetailComponent implements OnInit {
    * Extract the id from route, then look for the corresponding hero.
    */
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
+    this.route.params.forEach(params => {
 
       // extraire id du route
-      console.log("param = " + params.toString());
-      let id: number = params['id'];
+      let id = Number.parseInt(params['id']);
+      // this.person = this.peopleService.get(id);
 
       // invoke the hero service.
       this.heroService.getHero(id).then(hero => this.hero = hero);
