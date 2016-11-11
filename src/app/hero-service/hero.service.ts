@@ -3,7 +3,7 @@ import {HEROES} from './mock-heroes';
 
 
 @Injectable()
-export class HeroService {
+export class Old_HeroService {
 	getHeroes() {
 		return Promise.resolve(HEROES);
 	}

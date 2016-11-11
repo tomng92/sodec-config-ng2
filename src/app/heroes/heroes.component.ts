@@ -5,9 +5,10 @@
 
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {HeroService} from '../hero-service/hero.service';
+import {HeroService} from '../hero-service/fake-heroes.service';
 //import {HeroDetailComponent} from '../hero-detail/hero-detail.component';
 import {Hero} from '../hero-service/hero';
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'my-heroes',
@@ -22,8 +23,27 @@ export class HeroesComponent implements OnInit {
 
   getHeroes() {
 
-    this._heroService.getHeroes().then(heroes => this.heroes = heroes);
-  }
+    let completed : boolean = false;
+
+    let subs : Subscription =
+    //  heroService.getHeroes() returns an
+    // this._heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+
+    // https://xgrommx.github.io/rx-book/content/getting_started_with_rxjs/creating_and_querying_observable_sequences/creating_and_subscribing_to_simple_observable_sequences.html
+
+    this._heroService.getHeroes().subscribe(
+      heroes => this.heroes = heroes,
+      e => console.log("onError: %s", e),
+      function() {
+        console.log("COmpleted!!!!");
+        completed = true;
+        // console.log("this.heroes() size is %d", this.heroes.length);
+        console.log("this.heroes() completed = " + completed);
+      });
+
+
+
+   }
 
   gotoDetail() {
     // this._router.navigate(['detail', { id: this.selectedHero.id }]);
