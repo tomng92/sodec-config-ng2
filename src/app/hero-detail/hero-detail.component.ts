@@ -6,7 +6,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 // import {RouteParams} from '@angular/router';
 import {Hero} from '../hero-service/hero';
-import {HeroService} from '../hero-service/fake-heroes.service';
+import {HeroService} from '../hero-service/hero.service';
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
@@ -39,10 +39,22 @@ export class HeroDetailComponent implements OnInit {
       // invoke the hero service.
       // this.heroService.getHero(id).then(hero => this.hero = hero);
 
-      //this._heroService.getHero(id).then(hero => this.hero = hero);
-      let foundHero : Hero = this._heroService.getHero(id);
+      let  myHeroes : Hero[];
 
-      let  heroes = this._heroService.getHeroes();
+      console.log("AAA");
+
+      //this._heroService.getHero(id).then(hero => this.hero = hero);
+      this._heroService.getHeroes().subscribe(heroes => myHeroes = heroes);
+
+      let foundHero: Hero = null;
+
+      for (let h of myHeroes) {
+        if (h.id === id) {
+          foundHero = h;
+          break;
+        }
+      }
+
 
       console.log("ngOnInit for id = " + id);
       //console.log("Hero is " + )

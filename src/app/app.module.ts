@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import {HeroService} from "./hero-service/fake-heroes.service";
+import {HeroService} from "./hero-service/hero.service";
 import { AppRoutingModule, routingComponents} from './app.routing';
 
 @NgModule({

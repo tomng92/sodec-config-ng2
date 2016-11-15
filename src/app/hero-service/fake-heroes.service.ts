@@ -1,9 +1,10 @@
 import {Injectable} from "@angular/core"
 import {Http} from '@angular/http';
 import 'rxjs/Rx'
+//import {HeroDetailComponent} from "../hero-detail/hero-detail.component";
 
 @Injectable()
-export class HeroService {
+export class FakeHeroService {
 
   endpoint_url: string = "http://localhost:8080/api/v1/shipwrecks"; //"https://restcountries.eu/rest/v1/region/";
 
@@ -24,6 +25,5 @@ export class HeroService {
     return this.http.get(this.endpoint_url).map(res => res.json())
       .filter(h => h.id === id)[0];
   }
-
 }
 

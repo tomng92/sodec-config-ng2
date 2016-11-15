@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {HeroService} from './hero-service/fake-heroes.service';
+import {HeroService} from './hero-service/hero.service';
+import './rxjs-operators';
 
 @Component({
   selector: 'my-app',

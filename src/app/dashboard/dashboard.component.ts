@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Hero} from '../hero-service/hero';
-import {HeroService} from '../hero-service/fake-heroes.service';
+import {HeroService} from '../hero-service/hero.service';
 
 @Component({
   selector: 'my-dashboard',
@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   constructor(private _heroService: HeroService, private _router: Router) { }
 
   ngOnInit() {
-    this._heroService.getHeroes().subscribe(heroes => this.heroes = heroes.slice(1,5));
+    this._heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
   gotoDetail(hero: Hero) {
