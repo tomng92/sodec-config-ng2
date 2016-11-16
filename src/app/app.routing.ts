@@ -3,13 +3,19 @@ import {NgModule} from "@angular/core";
 import {HeroesComponent} from "./heroes/heroes.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HeroDetailComponent} from "./hero-detail/hero-detail.component";
+import {WikiComponent} from "./wiki/wiki.component";
+import {WikiSmartComponent} from "./wiki/wiki-smart.component";
+import {TodoComponent} from "./todo/todo.component";
 
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'heroes'},
   {path: 'heroes', component: HeroesComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'detail/:id', component: HeroDetailComponent}
+  {path: 'todo', component: TodoComponent},
+  {path: 'detail/:id', component: HeroDetailComponent},
+  {path: "wiki", component: WikiComponent},
+  {path: "wiki-smart", component: WikiSmartComponent}
 ];
 
 @NgModule({
@@ -19,6 +25,8 @@ const routes: Routes = [
 export class AppRoutingModule {
 }
 
-export const routingComponents = [HeroesComponent, DashboardComponent, HeroDetailComponent];
+export const routingComponents = [HeroesComponent, DashboardComponent, HeroDetailComponent,
+  WikiComponent, WikiSmartComponent,
+  TodoComponent];
 
 

@@ -1,6 +1,25 @@
-<h1>{{title}}</h1>
+
+<md-toolbar color="primary">
+  Test Interface SODEC
+</md-toolbar>
+
+<md-card>
+  <md-tab-group>
+    <md-tab label="Accueil">
+      <p>Accueil</p>
+    </md-tab>
+    <md-tab label="Nos héros">
+      <p>Héros</p>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+
+
 <div>
-  <a href="#" [routerLink]="['/dashboard']">Dashboard</a>
-  <a href="#" [routerLink]="['/heroes']">Heroes</a>
+  <a href="#" [routerLink]="['/dashboard']">Accueil</a>
+  <a href="#" [routerLink]="['/heroes']">Héros</a>
+  <a href="#" [routerLink]="['/todo']">Items TODO</a>
+  <a href="#" [routerLink]="['/wiki']">Wikipédia</a>
+  <a href="#" [routerLink]="['/wiki-smart']">Wikipédia-2 </a>
 </div>
 <router-outlet></router-outlet>

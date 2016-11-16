@@ -8,6 +8,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {Hero} from '../hero-service/hero';
 import {HeroService} from '../hero-service/hero.service';
 import {ActivatedRoute, Params} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'my-hero-detail',
@@ -15,7 +16,7 @@ import {ActivatedRoute, Params} from "@angular/router";
   styleUrls: ['hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+  hero: Hero;
 
   /**
    * Ctor par DI
@@ -31,35 +32,14 @@ export class HeroDetailComponent implements OnInit {
    */
   ngOnInit() {
     this._route.params.forEach(params => {
+      console.log(`hero-detail.component.ngOnInit(): ${[params['id']]}`);
 
       // extraire id du route
       let id = Number.parseInt(params['id']);
       // this.person = this.peopleService.get(id);
 
-      // invoke the hero service.
-      // this.heroService.getHero(id).then(hero => this.hero = hero);
+      this._heroService.findHero(id).subscribe(hero => this.hero = hero);
 
-      let  myHeroes : Hero[];
-
-      console.log("AAA");
-
-      //this._heroService.getHero(id).then(hero => this.hero = hero);
-      this._heroService.getHeroes().subscribe(heroes => myHeroes = heroes);
-
-      let foundHero: Hero = null;
-
-      for (let h of myHeroes) {
-        if (h.id === id) {
-          foundHero = h;
-          break;
-        }
-      }
-
-
-      console.log("ngOnInit for id = " + id);
-      //console.log("Hero is " + )
-
-      this.hero = foundHero;
     })
   }
 
@@ -67,10 +47,3 @@ export class HeroDetailComponent implements OnInit {
     window.history.back();
   }
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -8,16 +8,27 @@ import {HeroService} from '../hero-service/hero.service';
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.css']
 })
+/**
+ *
+ */
 export class DashboardComponent implements OnInit {
   public heroes: Hero[] = [];
 
   constructor(private _heroService: HeroService, private _router: Router) { }
 
+  /**
+   *
+   */
   ngOnInit() {
     this._heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
+  /**
+   *
+   * @param hero
+   */
   gotoDetail(hero: Hero) {
+    console.log("dashboard.component.gotoDetail() %s", hero.toString());
     this._router.navigate(['detail', { id: hero.id }]);
   }
 }

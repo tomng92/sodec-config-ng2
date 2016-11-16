@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {HeroService} from './hero-service/hero.service';
 import './rxjs-operators';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'my-app',
@@ -9,5 +10,14 @@ import './rxjs-operators';
   providers: [HeroService]
 })
 export class AppComponent {
-  public title = 'Tour des Héros';
+
+  constructor(private router: Router) {};
+  public title = 'Tour des XHéros';
+
+
+  gotoPanel(panelName: string) {
+    console.log("gotoPanel %s", panelName);
+    this.router.navigate(['/' + panelName]);
+  }
+
 }

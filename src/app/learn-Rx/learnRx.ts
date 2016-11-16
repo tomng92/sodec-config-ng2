@@ -46,7 +46,3 @@ var subscription = source.subscribe(
   });
 
 
-
-let  foo:[string, string] = ['','',11];
-
-console.log(foo);
