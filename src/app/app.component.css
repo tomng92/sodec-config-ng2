@@ -26,3 +26,23 @@ h2 {
   margin-top: 0;
   padding-top: 0;
 }
+
+
+
+.app-content {
+  padding: 20px;
+}
+
+.app-sidenav {
+  padding: 10px;
+  min-width: 100px;
+}
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.app-toolbar-menu {
+  padding: 0 14px 0 14px;
+  color: white;
+}

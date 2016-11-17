@@ -1,25 +1,51 @@
 
+<!--<md-toolbar color="primary">-->
+  <!--Test Interface SODEC-->
+<!--</md-toolbar>-->
+
+<!--<md-card>-->
+  <!--<md-tab-group>-->
+    <!--<md-tab label="Accueil">-->
+      <!--<p>Accueil</p>-->
+    <!--</md-tab>-->
+    <!--<md-tab label="Nos héros">-->
+      <!--<p>Héros</p>-->
+    <!--</md-tab>-->
+  <!--</md-tab-group>-->
+<!--</md-card>-->
+
+
+<!-- adfasdfadf -->
 <md-toolbar color="primary">
-  Test Interface SODEC
+  <button class="app-icon-button" (click)="sidenav.toggle()">
+    <i class="material-icons app-toolbar-menu">menu</i>
+  </button> &nbsp; Test Interface-SODEC&nbsp;
+
+  <button md-button [routerLink]="['/dashboard']">Accueil</button>
+  <button md-button [routerLink]="['/heroes']">Héros</button>
+  <button md-button [routerLink]="['/todo']">Item TODO</button>
+
+  <span class="app-toolbar-filler"></span>
+
+  <button md-button [routerLink]="['/wiki']">Wikipédia</button>
+  <button md-button [routerLink]="['/wiki-smart']">Wikipédia (avec délai)</button>
+  <!--<button md-button *ngIf="loggedIn()" [routerLink]="['/profile']">Profile</button>-->
+  <!--<button md-button *ngIf="!loggedIn()" (click)="login()">Sign in</button>-->
+  <!--<button md-button *ngIf="loggedIn()" (click)="logout()">Sign out</button>-->
+
+  <!--<button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE THEME</button>-->
 </md-toolbar>
 
-<md-card>
-  <md-tab-group>
-    <md-tab label="Accueil">
-      <p>Accueil</p>
-    </md-tab>
-    <md-tab label="Nos héros">
-      <p>Héros</p>
-    </md-tab>
-  </md-tab-group>
-</md-card>
-
-
-<div>
-  <a href="#" [routerLink]="['/dashboard']">Accueil</a>
-  <a href="#" [routerLink]="['/heroes']">Héros</a>
-  <a href="#" [routerLink]="['/todo']">Items TODO</a>
-  <a href="#" [routerLink]="['/wiki']">Wikipédia</a>
-  <a href="#" [routerLink]="['/wiki-smart']">Wikipédia-2 </a>
+<div class="app-content">
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
+
+
+<!--<div>-->
+  <!--<a href="#" [routerLink]="['/dashboard']">Accueil</a>-->
+  <!--<a href="#" [routerLink]="['/heroes']">Héros</a>-->
+  <!--<a href="#" [routerLink]="['/todo']">Items TODO</a>-->
+  <!--<a href="#" [routerLink]="['/wiki']">Wikipédia</a>-->
+  <!--<a href="#" [routerLink]="['/wiki-smart']">Wikipédia-2 </a>-->
+<!--</div>-->
+<!--<router-outlet></router-outlet>-->
