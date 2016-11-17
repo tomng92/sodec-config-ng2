@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'my-app',
+  //templateUrl: './bootstrap-navbar/bootstrap-navbar.html',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   providers: [HeroService]

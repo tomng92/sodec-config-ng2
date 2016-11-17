@@ -12,7 +12,8 @@ import {AppRoutingModule, routingComponents} from './app.routing';
 import {WikiComponent} from './wiki/wiki.component';
 import {WikiSmartComponent} from "./wiki/wiki-smart.component";
 import {MaterialModule} from "@angular/material";
-import {TodoComponent} from "./todo/todo.component"
+import {TodoComponent} from "./todo/todo.component";
+import { AlmeroComponent } from './almero/almero.component'
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import {TodoComponent} from "./todo/todo.component"
     HeroesComponent,
     DashboardComponent,
     HeroDetailComponent,
-    WikiComponent, WikiSmartComponent, TodoComponent
+    WikiComponent, WikiSmartComponent, TodoComponent, AlmeroComponent
   ],
   imports: [
     BrowserModule,
