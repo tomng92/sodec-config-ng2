@@ -6,6 +6,7 @@ import {HeroDetailComponent} from "./hero-detail/hero-detail.component";
 import {WikiComponent} from "./wiki/wiki.component";
 import {WikiSmartComponent} from "./wiki/wiki-smart.component";
 import {TodoComponent} from "./todo/todo.component";
+import {ShowDropDownComponent} from "./bennadel-dropdown/show-dropdown";
 
 
 const routes: Routes = [
@@ -15,8 +16,10 @@ const routes: Routes = [
   {path: 'todo', component: TodoComponent},
   {path: 'detail/:id', component: HeroDetailComponent},
   {path: "wiki", component: WikiComponent},
-  {path: "wiki-smart", component: WikiSmartComponent}
+  {path: "wiki-smart", component: WikiSmartComponent},
+  {path: "show-dropdown", component: ShowDropDownComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
