@@ -29,6 +29,7 @@ export class HeroService {
 
   //private heroesUrl = 'app/heroes';  // URL to web API
 
+  // url du rest service  das boot m2 (voir le coirs Spring Boot dans pluralsight)
   private heroesUrl = "http://localhost:8080/api/v1/shipwrecks"; //"https://restcountries.eu/rest/v1/region/";
 
 
@@ -59,6 +60,12 @@ export class HeroService {
     let heroList: Hero[] = [];
 
     // Convertir la table d'objet tuples en objet Heros.
+    /**
+     * Le url "http://localhost:8080/api/v1/shipwrecks" nous donne ceci:
+     * [{"id":1,"name":"U869","description":"A very deep German UBoat","condition":"FAIR","depth":200,"latitude":44.12,"longitude":138.44,"yearDiscovered":1994},
+     * {"id":2,"name":"Thistlegorm","description":"British merchant boat in the Red Sea","condition":"GOOD","depth":80,"latitude":44.12,"longitude":138.44,"yearDiscovered":1994},
+     * {"id":3,"name":"S.S. Yongala","description":"A luxury passenger ship wrecked on the great barrier reef","condition":"FAIR","depth":50,"latitude":44.12,"longitude":138.44,"yearDiscovered":1994}]
+     */
     for (let item of body) {
       let hero: Hero = new HeroObj(item["id"], item["name"]);
       //console.log(" From hero.service.ts: item = " + item);
